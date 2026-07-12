@@ -4,6 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Card Selection",
   description: "Pick your cards.",
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({
