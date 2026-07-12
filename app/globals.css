@@ -1,0 +1,34 @@
+:root {
+  --bg: #ece7df;
+  --bg-accent: #e2dccf;
+  --ink: #4a463f;
+  --ink-soft: #6f6a60;
+  --card-back: #b7ae9e;
+  --card-back-2: #a79d8b;
+  --card-edge: rgba(74, 70, 63, 0.18);
+  --accent: #7d9b76;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  color: var(--ink);
+  background: radial-gradient(
+      1200px 800px at 50% -10%,
+      var(--bg-accent),
+      transparent 70%
+    ),
+    var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
