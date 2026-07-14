@@ -90,7 +90,7 @@ export default function Home() {
             color: "var(--ink)",
           }}
         >
-          Card Selection
+          Metaphoric Cards
         </h1>
         <p
           style={{ margin: "8px 0 0", color: "var(--ink-soft)", fontSize: 15 }}

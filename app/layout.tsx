@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Card Selection",
+  title: "Metaphoric Cards",
   description: "Pick your cards.",
   manifest: "/site.webmanifest",
 };
