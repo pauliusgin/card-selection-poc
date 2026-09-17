@@ -1,13 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import type { CardData } from "@/lib/cards";
+import { CARD_HEIGHT, CARD_WIDTH, type CardData } from "@/lib/cards";
 
 type CardProps = {
   data: CardData;
   faceUp: boolean;
   onClick?: () => void;
   selectable?: boolean;
+  scale?: number;
 };
 
 export default function Card({
@@ -15,7 +16,14 @@ export default function Card({
   faceUp,
   onClick,
   selectable = false,
+  scale = 1,
 }: CardProps) {
+  const width = CARD_WIDTH * scale;
+  const height = CARD_HEIGHT * scale;
+  const cornerRadius = 14 * scale;
+  const borderWidth = 3 * scale;
+  const innerInset = 10 * scale;
+
   return (
     <motion.button
       type="button"
@@ -29,8 +37,8 @@ export default function Card({
         default: { type: "spring", stiffness: 180, damping: 26 },
       }}
       style={{
-        width: 116,
-        height: 162,
+        width,
+        height,
         padding: 0,
         border: "none",
         background: "transparent",
@@ -55,19 +63,19 @@ export default function Card({
             inset: 0,
             backfaceVisibility: "hidden",
             WebkitBackfaceVisibility: "hidden",
-            borderRadius: 14,
+            borderRadius: cornerRadius,
             boxShadow: "0 6px 16px rgba(74,70,63,0.18)",
             background:
               "repeating-linear-gradient(45deg, var(--card-back) 0 10px, var(--card-back-2) 10px 20px)",
-            border: "3px solid #cfc7b6",
+            border: `${borderWidth}px solid #cfc7b6`,
           }}
         >
           <div
             style={{
               position: "absolute",
-              inset: 10,
-              borderRadius: 8,
-              border: "1.5px solid rgba(255,255,255,0.35)",
+              inset: innerInset,
+              borderRadius: 8 * scale,
+              border: `${1.5 * scale}px solid rgba(255,255,255,0.35)`,
             }}
           />
         </div>
@@ -80,10 +88,10 @@ export default function Card({
             backfaceVisibility: "hidden",
             WebkitBackfaceVisibility: "hidden",
             transform: "rotateY(180deg)",
-            borderRadius: 14,
+            borderRadius: cornerRadius,
             overflow: "hidden",
             boxShadow: "0 6px 16px rgba(74,70,63,0.22)",
-            border: "3px solid #fff",
+            border: `${borderWidth}px solid #fff`,
             background: "#fff",
           }}
         >

@@ -16,3 +16,10 @@ export const CARDS: CardData[] = cardLinks.map((front, index) => {
     front,
   };
 });
+
+// Base footprint of a card on the table. The tray renders the same card at
+// SELECTED_CARD_SCALE, so every layout that reserves space for a card derives
+// its box from these instead of repeating the numbers.
+export const CARD_WIDTH = 116;
+export const CARD_HEIGHT = 162;
+export const SELECTED_CARD_SCALE = 2;
